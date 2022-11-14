@@ -3,11 +3,11 @@ permalink: /theses/
 title: "Theses Supervision"
 ---
 
-#### 2022
+# 2022
 
 **Jonas Brüstch** (ETH Zürich) "*The Web of Things Extension for Motion Control of a 7-DoF Robotic Arm towards Adaptable Factories*" (Master's Thesis)
 
-#### 2021
+# 2021
 
 **David Montani** (University of St.Gallen) "*A Survey on Problem Detection in Industrial Automation Systems*" (Bachelor's Thesis)
 
@@ -19,18 +19,18 @@ title: "Theses Supervision"
 
 - [Link to the online library](https://pub.tik.ee.ethz.ch/students/2020-HS/SA-2020-53.pdf)
 
-#### 2020
+# 2020
 
 **Steve Zwicky** (University of St.Gallen) "*Implementation Of A Manufacturing Execution System With Increased Explainability*" (Master's Thesis)
 
 
-#### 2018
+# 2018
 
 **Claire Schneeberger** (University of St.Gallen) "*Mixed Reality Inspection Interface for Building Automation Systems*" (Master's Thesis)
 
 - [Link to Google Books](https://books.google.ch/books/about/Mixed_Reality_Inspection_Interface_for_B.html?id=VxVezQEACAAJ)
 
-#### 2016
+# 2016
 
 **Haruka Kuji** (Keio University) "*Maximum Liklihood Estimation of RF Tag Localization with Mechanically Controlled Antenna*" (Bachelor's Thesis)
 
