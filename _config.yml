@@ -21,8 +21,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   Hazy beers (see my <a href="https://untappd.com/user/iomz">Untapped</a>), sauna, swimming, and <a href="https://www.youtube.com/playlist?list=PLAMNR9coa6gj50qeclfkDK9nPA9OH6dEg">Onewheeling</a>.
 repository: "iomz/iomz.github.com"
 breadcrumbs: true
-twitter_username: iomz
 github_username: iomz
+twitter_username: iomz
 minimal_mistakes_skin: contrast
 locale: "en-US"
 search: true
@@ -39,7 +39,7 @@ markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
+paginate: 10 # amount of posts to show
 paginate_path: /page:num/
 timezone: CET # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
@@ -79,27 +79,27 @@ author:
   avatar : "https://avatars2.githubusercontent.com/u/26181?s=460&v=4"
   bio    : "行动缓慢"
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://iomz.github.io"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/iomz"
+    #- label: "Website"
+    #  icon: "fas fa-fw fa-link"
+    #  url: "https://iomz.github.io"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/iomz"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/iomz"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/iomz"
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/iomz"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/iomz"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/iomz"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/iomz"
@@ -118,7 +118,7 @@ defaults:
       related: true
       show_date: true
       toc: true
-      toc_icon: "cog"
+      #toc_icon: "cog"
       toc_sticky: true
       classes: wide
   # _pages
