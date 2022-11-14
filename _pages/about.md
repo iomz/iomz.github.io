@@ -3,7 +3,9 @@ permalink: /about/
 title: "About Me"
 ---
 
-I am a doctoral researcher at the Institute of Computer Science, University of St.Gallen (ICS-HSG) and the first generation of the School of Computer Science (DCS) -- you can see my appearance in the [program page](https://www.unisg.ch/en/forschung/doktorat/computerscience/studying-at-the-dcs) :-D
+I am a doctoral researcher at the Institute of Computer Science, University of St.Gallen (ICS-HSG) and the first generation of the School of Computer Science (DCS) -- you can see my appearance in the [program page](https://www.unisg.ch/en/forschung/doktorat/computerscience/) :-D
+
+<img width="300" alt="Me at the program page" src="https://interactions.ics.unisg.ch/~iomz/assets/img/iomz-on-program.png">
 
 My primary research interest is **DevOps towards future industrial cyber-physical systems**, as well as the interoperability and standardization of enabling technologies for machine-to-machine and human-computer interactions.
 
