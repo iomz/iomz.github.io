@@ -259,9 +259,15 @@ Here's all you need to do.
 git clone https://github.com/iomz/docker-diffusers-jetson
 ```
 
-## Clone a model from Huging Face in `models/`
+## Clone a model from Huging Face in `models/` with git lfs
 
-E.g., runwayml/stable-diffusion-v1-5
+First install git lfs
+```sh
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt install git-lfs
+```
+
+Then clone the model, e.g., runwayml/stable-diffusion-v1-5 (it should take a while)
 
 ```sh
 mkdir -p docker-diffusers-jetson/models && cd $_
