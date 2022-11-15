@@ -22,7 +22,7 @@ The board I tested today is the very first model of AGX Xavier (P2822-0000) with
 See the [Diffusers on Docker](#diffusers-on-docker) section to run the txt2img container on Xavier with JetPack 5.0.2.
 If your Xavier doesn't have the version of JetPack, keep reading.
 
-# Prepare the Jetson AGX Xavier
+# Prepare Jetson AGX Xavier
 
 The NVIDIA Jetson series require [NVIDIA JetPack](https://developer.nvidia.com/embedded/jetpack), which provides "a full development environment for hardware-accelerated AI-at-the-edge development" including the Jetson Linux image (Linux4Tegra, L4T), CUDA setup, etc.
 
@@ -242,7 +242,7 @@ Restart the docker daemon
 sudo systemctl start docker
 ```
 
-# Diffusers on Docker
+# Run Diffusers on Docker
 
 The easiest way to try the Stable Diffusion models would be using [Diffusers](https://github.com/huggingface/diffusers) from [Hugging Face](https://huggingface.co).
 
@@ -276,6 +276,8 @@ git clone https://huggingface.co/runwayml/stable-diffusion-v1-5
 
 ## Run txt2img via Docker Compose
 
+With the default settings, it takes about 90 seconds to generate an image.
+
 ```console
 % docker-compose run --rm txt2img -h
 Creating docker-diffusers-jetson_txt2img_run ... done
@@ -308,6 +310,46 @@ docker-compose run --rm txt2img --model models/midjourney-v4-diffusion "abandone
 
 ![midjourney-v4-diffusion](https://interactions.ics.unisg.ch/~iomz/assets/img/201538433-1015771d-f537-481f-8f72-f7667e7df040.png)
 
+# EDIT: Comapre Jetson Xavier vs. GeForce RTX 2060 Mobile
+
+Next day, I thought of trying out the same script directly on my laptop's GPU.
+It only took **18.19 seconds** to generate an image 😂
+
+```console
+% sudo lspci -v | grep -i vga
+00:02.0 VGA compatible controller: Intel Corporation UHD Graphics 630 (Mobile) (prog-if 00 [VGA controller])
+01:00.0 VGA compatible controller: NVIDIA Corporation TU106M [GeForce RTX 2060 Mobile] (rev a1) (prog-if 00 [VGA controller])
+
+% nvidia-smi
+Tue Nov 15 12:39:57 2022
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 515.65.07    Driver Version: 515.65.07    CUDA Version: 11.7     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA GeForce ...  On   | 00000000:01:00.0 Off |                  N/A |
+| N/A   36C    P0    26W /  N/A |      5MiB /  6144MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A      1506      G   /usr/lib/xorg/Xorg                  4MiB |
++-----------------------------------------------------------------------------+
+
+% python txt2img.py --model models/midjourney-v4-diffusion "stable diffusion is running on my laptop"
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 52/52 [00:13<00:00,  3.74it/s]
+python txt2img.py --model models/midjourney-v4-diffusion   18.19s user 6.40s system 114% cpu 21.412 total
+```
+
+and the image generated:
+
+![stable diffusion is running on my laptop](https://interactions.ics.unisg.ch/~iomz/assets/img/c505c651-8251-474f-ba9d-fb22896407a9.png)
 
 # Things I tried but didn't work
 
@@ -415,3 +457,4 @@ Apparently, PyTorch has many cool stuff: [https://pytorch.org/docs/stable/distri
 
 Finally, I found that `nvcr.io/nvidia/l4t-pytorch:r34.1.1-pth1.11-py3` supports `torch.distributed` in [this post](https://forums.developer.nvidia.com/t/torch-distributed-not-supported-on-orin/220732/2?u=iori.mizutani).
 Then I came up with [Diffusers on Docker](#diffusers-on-docker).
+
