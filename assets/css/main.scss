@@ -4,8 +4,19 @@
 
 @charset "utf-8";
 
-$link-color: red;
+$link-color: #00AEFF;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+a:visited {
+  color: #c03030;
+}
+
+.search__toggle {
+  color: #00AEFF;
+}
+
+.site-title {
+  color: black !important;
+}

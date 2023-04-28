@@ -77,7 +77,7 @@ plugins:
 author:
   name   : "Iori Mizutani"
   avatar : "https://avatars2.githubusercontent.com/u/26181?s=460&v=4"
-  bio    : "行动缓慢"
+  bio    : "毎日たのしく"
   links:
     #- label: "Website"
     #  icon: "fas fa-fw fa-link"
@@ -91,6 +91,9 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/iomz"
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube-square"
+      url: "https://www.youtube.com/@iomz"
 
 footer:
   links:
