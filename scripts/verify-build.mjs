@@ -30,9 +30,10 @@ const broken = [];
 const malformed = [];
 for (const htmlPath of walk(dist).filter((path) => path.endsWith('.html'))) {
   const html = readFileSync(htmlPath, 'utf8');
-  const references = [...html.matchAll(/(?:href|src)="([^"]+)"/g)].map((match) => match[1]);
+  const visibleHtml = html.replace(/<!--[\s\S]*?-->/g, '');
+  const references = [...visibleHtml.matchAll(/(?:href|src)="([^"]+)"/g)].map((match) => match[1]);
 
-  if (/\]\(https?:\/\//i.test(html)) {
+  if (/\]\(https?:\/\//i.test(visibleHtml)) {
     malformed.push(`${relative(dist, htmlPath)} contains unparsed Markdown link syntax`);
   }
 
