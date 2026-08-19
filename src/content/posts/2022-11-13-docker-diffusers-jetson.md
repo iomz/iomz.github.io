@@ -57,21 +57,21 @@ sdkmanager
 [Press force recovery button and power button on AGX Xavier to enter recovery mode](https://wiki.hanzheteng.com/equipment-and-devices/nvidia-agx-xavier).
 Connect the USB Type C cable to the Type C port of Xavier. The SDK Manager should detect the Xavier.
 
-![Port](https://interactions.ics.unisg.ch/~iomz/assets/img/201482921-4900383f-da0d-4877-a126-819862a1567d.jpg)
+![Port](https://www.sazanka.io/assets/img/201482921-4900383f-da0d-4877-a126-819862a1567d.jpg)
 
-![SDK Manager](https://interactions.ics.unisg.ch/~iomz/assets/img/201481564-398f294b-8685-4283-ad7e-88e410f6a625.png)
+![SDK Manager](https://www.sazanka.io/assets/img/201481564-398f294b-8685-4283-ad7e-88e410f6a625.png)
 
 ### Flash the L4T image
 
 Follow the wizard to flash the image
 
-![Flashing](https://interactions.ics.unisg.ch/~iomz/assets/img/201482955-53d0bdb4-3de6-479a-bcb0-6ebbcaaa0d8e.png)
+![Flashing](https://www.sazanka.io/assets/img/201482955-53d0bdb4-3de6-479a-bcb0-6ebbcaaa0d8e.png)
 
 ### Finish "System configuration wizard"
 
 Once the Linux image is flashed, then this window will pop up. Continue setting up the Xavier as it is telling us – you need a keyboard (+ a mouse) and a display to do so.
 
-![Before SDK](https://interactions.ics.unisg.ch/~iomz/assets/img/201483107-74c42e05-470e-49af-8596-4d2eacf1e59a.png)
+![Before SDK](https://www.sazanka.io/assets/img/201483107-74c42e05-470e-49af-8596-4d2eacf1e59a.png)
 
 ### Reboot
 
@@ -82,13 +82,13 @@ A start job is running for End-user configuration after initial OEM installation
 ```
 
 Just tap the power/reset button to force-reboot.
-![power button](https://interactions.ics.unisg.ch/~iomz/assets/img/201483705-1205e60c-0537-4d7e-a6b1-1bbc9d8518fd.jpg)
+![power button](https://www.sazanka.io/assets/img/201483705-1205e60c-0537-4d7e-a6b1-1bbc9d8518fd.jpg)
 
 ### Install the SDK
 
 By default, xavier has the bridge interface `l4tbr0` with the v4 address `192.168.55.1` setup for the SDK manager to connect to and install the SDK components. I.e., you don't need to change the address. Just enter your user credential in the wizard just like above and hit the `Install` button.
 
-![l4tbr0](https://interactions.ics.unisg.ch/~iomz/assets/img/201483151-ee2c57e2-4944-4fa5-9246-c712e2f50572.png)
+![l4tbr0](https://www.sazanka.io/assets/img/201483151-ee2c57e2-4944-4fa5-9246-c712e2f50572.png)
 
 When finished, Xavier is all set with the JetPack now 😁
 
@@ -131,7 +131,7 @@ sudo -H pip install -U jetson-stats
 jtop
 ```
 
-![jtop](https://interactions.ics.unisg.ch/~iomz/assets/img/201536509-4f8f9205-670d-4e0b-8694-6154b8aad9b2.gif)
+![jtop](https://www.sazanka.io/assets/img/201536509-4f8f9205-670d-4e0b-8694-6154b8aad9b2.gif)
 
 ## Tune Xavier
 
@@ -300,7 +300,7 @@ optional arguments:
 docker-compose run --rm txt2img "abandoned building in forest with beautiful glass windows"
 ```
 
-![stable-diffusion-v1-5](https://interactions.ics.unisg.ch/~iomz/assets/img/201538507-22b48b01-204c-4d82-8b40-1cea9d0b98e1.png)
+![stable-diffusion-v1-5](https://www.sazanka.io/assets/img/201538507-22b48b01-204c-4d82-8b40-1cea9d0b98e1.png)
 
 You can use a different model (e.g., [prompthero/midjourney-v4-diffusion](https://huggingface.co/prompthero/midjourney-v4-diffusion)) with `--model` option (default: `models/stable-diffusion-v1-5`)
 
@@ -308,7 +308,7 @@ You can use a different model (e.g., [prompthero/midjourney-v4-diffusion](https:
 docker-compose run --rm txt2img --model models/midjourney-v4-diffusion "abandoned building in forest with beautiful glass windows"
 ```
 
-![midjourney-v4-diffusion](https://interactions.ics.unisg.ch/~iomz/assets/img/201538433-1015771d-f537-481f-8f72-f7667e7df040.png)
+![midjourney-v4-diffusion](https://www.sazanka.io/assets/img/201538433-1015771d-f537-481f-8f72-f7667e7df040.png)
 
 # EDIT: Comapre Jetson Xavier vs. GeForce RTX 2060 Mobile
 
@@ -349,7 +349,7 @@ python txt2img.py --model models/midjourney-v4-diffusion   18.19s user 6.40s sys
 
 and the image generated:
 
-![stable diffusion is running on my laptop](https://interactions.ics.unisg.ch/~iomz/assets/img/c505c651-8251-474f-ba9d-fb22896407a9.png)
+![stable diffusion is running on my laptop](https://www.sazanka.io/assets/img/c505c651-8251-474f-ba9d-fb22896407a9.png)
 
 # Things I tried but didn't work
 
@@ -376,7 +376,7 @@ sudo apt-get -y install autoconf bc build-essential g++-8 gcc-8 clang-8 lld-8 ge
 
 Find `torch-1.13.0a0+d0d6b1f2.nv22.10-cp38-cp38-linux_aarch64.whl`.
 
-![PyTorch for JetPack](https://interactions.ics.unisg.ch/~iomz/assets/img/201539939-9f8b14fc-6912-4615-a75f-5787d1912f85.png)
+![PyTorch for JetPack](https://www.sazanka.io/assets/img/201539939-9f8b14fc-6912-4615-a75f-5787d1912f85.png)
 
 3. Ensure Python3
 
