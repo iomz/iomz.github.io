@@ -1,0 +1,32 @@
+---
+import { getEntry, render } from 'astro:content';
+import AuthorCard from '../components/AuthorCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const page = await getEntry('pages', 'about');
+if (!page) throw new Error('Missing pages/about.md');
+const { Content, headings } = await render(page);
+---
+
+<BaseLayout title={page.data.title} lang={page.data.locale ?? 'en'}>
+  <div class="article-shell page-shell">
+    <article class="article">
+      <header class="article-header">
+        <p class="eyebrow">Profile</p>
+        <h1>{page.data.title}</h1>
+      </header>
+      {headings.length > 1 && (
+        <details class="toc">
+          <summary>On this page</summary>
+          <ol>
+            {headings.filter(({ depth }) => depth <= 3).map((heading) => (
+              <li class={`depth-${heading.depth}`}><a href={`#${heading.slug}`}>{heading.text}</a></li>
+            ))}
+          </ol>
+        </details>
+      )}
+      <div class="prose"><Content /></div>
+    </article>
+    <AuthorCard />
+  </div>
+</BaseLayout>

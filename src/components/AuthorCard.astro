@@ -1,0 +1,14 @@
+---
+import { site } from '../config';
+---
+
+<aside class="author-card" aria-label="Author">
+  <img src={site.author.avatar} width="112" height="112" alt="" />
+  <div>
+    <p class="author-name">{site.author.name}</p>
+    <p class="author-bio" lang="ja">{site.author.bio}</p>
+    <ul class="social-links" role="list">
+      {site.links.map((link) => <li><a href={link.url} rel="me">{link.label}</a></li>)}
+    </ul>
+  </div>
+</aside>

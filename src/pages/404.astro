@@ -1,0 +1,17 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const page = await getEntry('pages', '404');
+if (!page) throw new Error('Missing pages/404.md');
+const { Content } = await render(page);
+---
+
+<BaseLayout title={page.data.title} description={page.data.excerpt} noindex>
+  <section class="not-found wrap">
+    <p class="error-code">404</p>
+    <h1>{page.data.title}</h1>
+    <div class="prose"><Content /></div>
+    <a class="button" href="/">Return home</a>
+  </section>
+</BaseLayout>

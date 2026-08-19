@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import PostList from '../../components/PostList.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getTerms, slugify, sortPosts, type Post } from '../../lib/posts';
+
+interface Props { term: string; posts: Post[]; }
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return getTerms(posts, 'categories').map(({ name, slug }) => ({
+    params: { category: slug },
+    props: { term: name, posts: sortPosts(posts.filter((post) => post.data.categories.some((category) => slugify(category) === slug))) },
+  }));
+}
+
+const { term, posts } = Astro.props;
+---
+
+<BaseLayout title={`${term} posts`}>
+  <section class="wrap archive">
+    <p class="eyebrow">Category</p>
+    <h1>{term}</h1>
+    <PostList posts={posts} />
+  </section>
+</BaseLayout>

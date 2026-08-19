@@ -37,7 +37,7 @@ I like (hoppy and hazy) beers (see my [Untapped](https://untappd.com/user/iomz),
 [Talk] **"Towards Provenance Integration for Field Devices in Industrial IoT Systems"** at [Provenance Week 2021](https://iitdbgroup.github.io/ProvenanceWeek2021/)
 
 - [Talk on YouTube](https://youtu.be/1kHuGtJoh4c)
-- [Paper and Poster \[pdf\]](https://interactions.ics.unisg.ch/~iomzhttps://interactions.ics.unisg.ch/~iomz/assets/pdf/2021-pw21.pdf)
+- [Paper and Poster \[pdf\]](https://interactions.ics.unisg.ch/~iomz/assets/pdf/2021-pw21.pdf)
 
 [Supervision] **David Montani** (University of St.Gallen) "*A Survey on Problem Detection in Industrial Automation Systems*" (Bachelor's Thesis)
 

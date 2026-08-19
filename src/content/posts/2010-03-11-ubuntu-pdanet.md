@@ -9,7 +9,7 @@ tags:
 locale: "ja-JP"
 ---
 
-*The original post is (https://iomz.hatenadiary.org/entry/20100311/1268296124](https://iomz.hatenadiary.org/entry/20100311/1268296124) and was migrated to this site.*
+*The original post is [https://iomz.hatenadiary.org/entry/20100311/1268296124](https://iomz.hatenadiary.org/entry/20100311/1268296124) and was migrated to this site.*
 
 # はじめに
 

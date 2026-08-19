@@ -1,0 +1,25 @@
+---
+import type { Post } from '../lib/posts';
+import { formatPostDate, getPostDate, getPostUrl, slugify } from '../lib/posts';
+
+interface Props { posts: Post[]; }
+const { posts } = Astro.props;
+---
+
+<ol class="post-list" role="list">
+  {posts.map((post) => (
+    <li>
+      <article>
+        <time datetime={getPostDate(post).toISOString().slice(0, 10)}>
+          {formatPostDate(post, post.data.locale)}
+        </time>
+        <h2><a href={getPostUrl(post)}>{post.data.title}</a></h2>
+        <ul class="term-list" role="list">
+          {post.data.categories.map((category) => (
+            <li><a href={`/categories/${slugify(category)}/`}>{category}</a></li>
+          ))}
+        </ul>
+      </article>
+    </li>
+  ))}
+</ol>

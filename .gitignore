@@ -1,4 +1,9 @@
-_site
-.sass-cache
+node_modules/
+dist/
+.astro/
+.DS_Store
+
+# Pre-migration Jekyll output may still exist in local worktrees.
+_site/
+.sass-cache/
 .jekyll-metadata
-Gemfile.lock

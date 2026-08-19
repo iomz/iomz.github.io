@@ -1,0 +1,21 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getTerms } from '../../lib/posts';
+
+const posts = await getCollection('posts');
+const terms = getTerms(posts, 'tags');
+const source = await getEntry('pages', 'tag-archive');
+---
+
+<BaseLayout title={source?.data.title ?? 'Tags'}>
+  <section class="wrap archive">
+    <p class="eyebrow">Browse the journal</p>
+    <h1>{source?.data.title ?? 'Tags'}</h1>
+    <ul class="term-cloud" role="list">
+      {terms.map((term) => (
+        <li><a href={`/tags/${term.slug}/`}><span>{term.name}</span><b>{term.count}</b></a></li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>

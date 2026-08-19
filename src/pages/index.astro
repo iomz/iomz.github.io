@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import AuthorCard from '../components/AuthorCard.astro';
+import PostList from '../components/PostList.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { sortPosts } from '../lib/posts';
+
+const posts = sortPosts(await getCollection('posts'));
+---
+
+<BaseLayout>
+  <section class="hero wrap">
+    <div>
+      <p class="eyebrow">Field notes since 2010</p>
+      <h1>Software, systems,<br />and things that run.</h1>
+      <p>Working notes, build logs, and technical discoveries.</p>
+    </div>
+    <AuthorCard />
+  </section>
+  <section class="wrap section">
+    <div class="section-heading">
+      <h2>All posts</h2>
+      <span>{posts.length.toString().padStart(2, '0')}</span>
+    </div>
+    <PostList posts={posts} />
+  </section>
+</BaseLayout>
